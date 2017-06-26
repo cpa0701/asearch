@@ -1,6 +1,11 @@
 <template>
     <div id="app">
         <HeaderNav></HeaderNav>
+        <el-row>
+            <el-col :span="24">
+                <router-view class="router-view"></router-view>
+            </el-col>
+        </el-row>
     </div>
 </template>
 

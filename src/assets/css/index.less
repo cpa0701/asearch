@@ -1,17 +1,93 @@
+body {
+  margin: 0;
+  //overflow: hidden;
+}
+//布局背景色
+.el-col {
+  border-radius: 4px;
+}
+.bg-purple-dark {
+  background: #99a9bf;
+}
+.bg-purple {
+  background: #d3dce6;
+}
+.bg-purple-light {
+  background: #e5e9f2;
+}
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+}
+//导航头部样式
 @headerNavBg: #1D8CE0;
-#headerNav > .el-row, #headerNav > .el-row .el-menu {
-  background-color: @headerNavBg !important;
+#headerNav {
+  position: relative;
+  .el-row {
+    background-color: @headerNavBg !important;
+    .el-col > .el-menu > a {
+      background-image: url(../img/logo1.png);
+      width: 135px;
+      height: 50px;
+    }
+    .el-col > .el-menu > a:hover {
+      border: 0;
+      background-image: url(../img/logo1.png);
+      width: 135px;
+      height: 50px;
+    }
+  }
+  .el-row .el-menu {
+    background-color: @headerNavBg !important;
+    .el-menu-item {
+      color: #fff;
+    }
+    .el-menu-item:hover {
+      border-bottom: 5px solid #fff;
+      background: transparent;
+    }
+    .el-submenu > div {
+      color: #fff;
+    }
+    .el-submenu > div:hover {
+      background: transparent;
+      border-bottom: 5px solid #fff;
+    }
+    .el-submenu > .el-menu > .el-menu-item {
+      color: #333;
+    }
+    .el-submenu > .el-menu > .el-menu-item:hover {
+      background: #fff;
+      color: @headerNavBg;
+    }
+    .el-menu-item input {
+      border-radius: 20px;
+    }
+    .el-menu-item > button {
+      background: none;
+      color: #fff;
+      border: 1px solid #fff;
+      border-radius: 10px;
+    }
+    .el-submenu i {
+      color: #fff;
+    }
+  }
 }
 
-#headerNav > .el-row .el-menu .el-menu-item,#headerNav > .el-row .el-menu .el-submenu>div {
-  color: #fff;
-}
-#headerNav > .el-row .el-menu .el-submenu>div:hover,#headerNav > .el-row .el-menu .el-menu-item:hover{
-  background: transparent;
-}
-#headerNav > .el-row .el-menu .el-submenu>.el-menu>.el-menu-item {
-  color: #333;
-}
-#headerNav > .el-row .el-menu .el-menu-item input{
-  border-radius: 20px;
+//主页广告样式
+#home {
+  .ad {
+    height: 125px;
+    background: #ecfaff;
+    margin-bottom: 24px;
+    padding-top: 3px;
+    position: relative;
+    .el-row {
+      margin-top: 70px;
+      .el-button {
+        width: 120px;
+      }
+    }
+  }
 }
