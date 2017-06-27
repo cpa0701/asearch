@@ -4,7 +4,7 @@
             <el-col>
                 <div class="ad">
                     <el-row>
-                        <el-col :push="5" :span="19">
+                        <el-col :push="6" :span="18">
                             <el-button type="warning">IOS</el-button>
                             <el-button type="info">Android</el-button>
                         </el-col>
@@ -12,26 +12,26 @@
                 </div>
             </el-col>
         </el-row>
-        <el-row :gutter="20">
-            <el-col :span="9" :push="5">
+        <el-row :gutter="50">
+            <el-col :span="8" :push="6">
                 <el-row>
-                    <el-col>fasdfasdfsdfasd</el-col>
+                    <el-col>
+                        12312313212123323
+                    </el-col>
                 </el-row>
                 <el-row>
                     <el-col>
-                        <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
-                            <el-tab-pane :key="editableTabs2.name"
-                                         :label="editableTabs2.title"
-                                         :name="editableTabs2.name" v-html="editableTabs2.content"></el-tab-pane>
-                            <el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
-                            <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
-                            <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
-                            <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
+                        <el-tabs v-model="activeName" @tab-click="handleClick">
+                            <el-tab-pane :key="item.name"
+                                         :label="item.title"
+                                         :name="item.name" v-html="item.content"
+                                         v-for="(item,index) in tabs">
+                            </el-tab-pane>
                         </el-tabs>
                     </el-col>
                 </el-row>
             </el-col>
-            <el-col class="bg-purple" :span="5" :push="5">
+            <el-col class="bg-purple" :span="4" :push="6">
                 fsdfsdfsdfsdsdf
             </el-col>
         </el-row>
@@ -44,20 +44,57 @@
     export default {
         data() {
             return {
-                activeName: 'first',
-                editableTabs2: {
-                    title: 'Tab 1',
-                    name: '1',
-                    content: '555'
-                }
+                activeName: '0',
+                tabs: [
+                    {
+                        title: '头条',
+                        name: '0',
+                        content: '我是头条'
+                    },
+                    {
+                        title: '直播',
+                        name: '1',
+                        content: '我是直播'
+                    },
+                    {
+                        title: '房产',
+                        name: '2',
+                        content: '我是房产'
+                    },
+                    {
+                        title: '港股',
+                        name: '3',
+                        content: '我是港股'
+                    },
+                    {
+                        title: '基金',
+                        name: '4',
+                        content: '我是基金'
+                    },
+                    {
+                        title: '美股',
+                        name: '5',
+                        content: '我是美股'
+                    },
+                    {
+                        title: '保险',
+                        name: '6',
+                        content: '我是保险'
+                    },
+                    {
+                        title: '沪深',
+                        name: '7',
+                        content: '我是沪深'
+                    }
+                ]
             };
         },
         methods: {
             handleClick(tab, event) {
-                this.editableTabs2.content='<p>dsfasfsdfasfasdfasd</p>';
+//                this.editableTabs2.content = '<p>dsfasfsdfasfasdfasd</p>';
             }
-        },mounted:function(){
-            console.log('sb');
+        }, mounted: function () {
+//            console.log('sb');
         }
     }
 </script>

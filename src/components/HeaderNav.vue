@@ -61,9 +61,23 @@
                     <router-link to="/register" tag="li" active-class="active" index="8" class="el-menu-item">
                         没有账号，立即注册
                     </router-link>
-                    <router-link to="/register" tag="li" active-class="active" index="9" class="el-menu-item">
-                        <el-button icon="information">登录</el-button>
-                    </router-link>
+                    <!--<router-link to="/" tag="li" active-class="active" index="9" class="el-menu-item">-->
+                    <!--<el-button icon="information">登录</el-button>-->
+                    <!--</router-link>-->
+                    <li class="el-menu-item">
+                        <el-popover
+                                ref="logIn"
+                                transition="fade-in-linear"
+                                popper-class="login"
+                                trigger="click">
+                            <el-table :data="gridData">
+                                <el-table-column width="150" property="date" label="日期"></el-table-column>
+                                <el-table-column width="100" property="name" label="姓名"></el-table-column>
+                                <el-table-column width="300" property="address" label="地址"></el-table-column>
+                            </el-table>
+                        </el-popover>
+                        <el-button icon="information" v-popover:logIn>登录</el-button>
+                    </li>
                 </el-menu>
             </el-col>
         </el-row>
@@ -75,7 +89,24 @@
         data() {
             return {
                 activeIndex: '1',
-                input: ''
+                input: '',
+                gridData: [{
+                    date: '2016-05-02',
+                    name: '王小虎',
+                    address: '上海市普陀区金沙江路 1518 弄'
+                }, {
+                    date: '2016-05-04',
+                    name: '王小虎',
+                    address: '上海市普陀区金沙江路 1518 弄'
+                }, {
+                    date: '2016-05-01',
+                    name: '王小虎',
+                    address: '上海市普陀区金沙江路 1518 弄'
+                }, {
+                    date: '2016-05-03',
+                    name: '王小虎',
+                    address: '上海市普陀区金沙江路 1518 弄'
+                }]
             };
         },
         methods: {
